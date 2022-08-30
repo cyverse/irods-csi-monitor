@@ -1,0 +1,13 @@
+---
+version: "3.2"
+
+services:
+  prometheus:
+    image: prom/prometheus
+    hostname: "$PROMETHEUS_CONF_HOST"
+    ports:
+      - "$PROMETHEUS_SERIVCE_PORT:9090"
+    volumes:
+      - type: bind
+        source: prometheus/prometheus.yml
+        target: /etc/prometheus/prometheus.yml
