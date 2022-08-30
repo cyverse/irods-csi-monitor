@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export ENV_NAME=cyverse_csi_prometheus
+export ENV_NAME=irods_monitor
 export DOMAIN="$ENV_NAME"_default
 
 export PROMETHEUS_SERIVCE_PORT=2022
