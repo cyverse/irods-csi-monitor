@@ -9,3 +9,13 @@ services:
     hostname: "$PROMETHEUS_CONF_HOST"
     ports:
       - "$PROMETHEUS_SERIVCE_PORT:9090"
+
+  grafana:
+    build:
+      context: .
+      dockerfile: grafana/Dockerfile
+    hostname: "$GRAFANA_CONF_HOST"
+    ports:
+      - "$GRAFANA_SERVICE_PORT:3000"
+    depends_on:
+      - prometheus
