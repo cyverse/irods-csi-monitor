@@ -1,17 +1,18 @@
 #!/bin/bash
 #
-# This script creates the defaults.ini configuration file for grafana service.
+# This script creates the grafana.ini configuration file for grafana service.
 #
 # It requires the following environment variables to be defined
 #
 # GRAFANA_ADMIN_USERNAME            The admin username
 # GRAFANA_ADMIN_PASSWORD            The admin password
+# GRAFANA_SERVICE_PORT              The service port
 
 
 main()
 {
-  expand_tmpl > /usr/share/grafana/conf/defaults.ini
-  chmod a+r /usr/share/grafana/conf/defaults.ini
+  expand_tmpl > /etc/grafana/grafana.ini
+  chmod a+r /etc/grafana/grafana.ini
 }
 
 
@@ -29,9 +30,10 @@ escape()
 
 expand_tmpl()
 {
-  cat <<EOF | sed --file - /tmp/defaults.ini.template
+  cat <<EOF | sed --file - /tmp/grafana.ini.template
 s/\$GRAFANA_ADMIN_USERNAME/$(escape $GRAFANA_ADMIN_USERNAME)/g
 s/\$GRAFANA_ADMIN_PASSWORD/$(escape $GRAFANA_ADMIN_PASSWORD)/g
+s/\$GRAFANA_SERVICE_PORT/$(escape $GRAFANA_SERVICE_PORT)/g
 EOF
 }
 
