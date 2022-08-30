@@ -6,6 +6,10 @@ services:
     build:
       context: .
       dockerfile: prometheus/Dockerfile
+      args:
+        GRAFANA_ADMIN_USERNAME: "$GRAFANA_ADMIN_USERNAME"
+        GRAFANA_ADMIN_PASSWORD: "$GRAFANA_ADMIN_PASSWORD"
+        GRAFANA_SERVICE_PORT: "$GRAFANA_SERVICE_PORT"
     hostname: "$PROMETHEUS_CONF_HOST"
     ports:
       - "$PROMETHEUS_SERIVCE_PORT:9090"

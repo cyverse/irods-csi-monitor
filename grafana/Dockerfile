@@ -1,5 +1,9 @@
 FROM grafana/grafana-enterprise
 
+ARG GRAFANA_ADMIN_USERNAME=admin
+ARG GRAFANA_ADMIN_PASSWORD=admin
+ARG GRAFANA_SERVICE_PORT=3000
+
 USER root
 COPY grafana/scripts/grafana.ini.template /tmp/grafana.ini.template
 COPY grafana/scripts/prep-grafana-ini.sh /usr/local/bin/
