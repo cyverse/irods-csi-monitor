@@ -3,6 +3,8 @@ FROM grafana/grafana-enterprise
 ARG GRAFANA_ADMIN_USERNAME=admin
 ARG GRAFANA_ADMIN_PASSWORD=admin
 ARG GRAFANA_SERVICE_PORT=3000
+ARG PROMETHEUS_HOST=localhost
+ARG PROMETHEUS_SERIVCE_PORT=9090
 
 USER root
 COPY grafana/scripts/grafana.ini.template /tmp/grafana.ini.template

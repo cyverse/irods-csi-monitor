@@ -4,7 +4,8 @@
 #
 # It requires the following environment variables to be defined
 #
-# GRAFANA_SERVICE_PORT              The grafana service port
+# PROMETHEUS_HOST              The prometheus host
+# PROMETHEUS_SERIVCE_PORT      The prometheus service port
 
 
 main()
@@ -29,7 +30,8 @@ escape()
 expand_tmpl()
 {
   cat <<EOF | sed --file - /tmp/datasource.yml.template
-s/\$GRAFANA_SERVICE_PORT/$(escape $GRAFANA_SERVICE_PORT)/g
+s/\$PROMETHEUS_HOST/$(escape $PROMETHEUS_HOST)/g
+s/\$PROMETHEUS_SERIVCE_PORT/$(escape $PROMETHEUS_SERIVCE_PORT)/g
 EOF
 }
 
