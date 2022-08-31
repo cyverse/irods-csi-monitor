@@ -9,4 +9,8 @@ COPY grafana/scripts/grafana.ini.template /tmp/grafana.ini.template
 COPY grafana/scripts/prep-grafana-ini.sh /usr/local/bin/
 RUN prep-grafana-ini.sh
 
+COPY grafana/scripts/datasource.yml.template /tmp/datasource.yml.template
+COPY grafana/scripts/prep-datasource-yaml.sh /usr/local/bin/
+RUN prep-datasource-yaml.sh
+
 USER grafana

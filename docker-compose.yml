@@ -20,6 +20,6 @@ services:
         GRAFANA_SERVICE_PORT: "$GRAFANA_SERVICE_PORT"
     hostname: "$GRAFANA_CONF_HOST"
     ports:
-      - "$GRAFANA_SERVICE_PORT:3000"
+      - "$GRAFANA_SERVICE_PORT:$GRAFANA_SERVICE_PORT"
     depends_on:
       - prometheus

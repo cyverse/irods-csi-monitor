@@ -1,0 +1,7 @@
+apiVersion: 1
+ 
+datasources:
+  - name: irods-csi-prometheus
+    type: prometheus
+    access: proxy
+    url: prometheus:$PROMETHEUS_SERIVCE_PORT
