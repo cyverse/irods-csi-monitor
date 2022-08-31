@@ -15,4 +15,7 @@ COPY grafana/scripts/datasource.yml.template /tmp/datasource.yml.template
 COPY grafana/scripts/prep-datasource-yaml.sh /usr/local/bin/
 RUN prep-datasource-yaml.sh
 
+COPY grafana/scripts/dashboard.yml /etc/grafana/provisioning/dashboards/dashboard.yml
+RUN chmod a+r /etc/grafana/provisioning/dashboards/dashboard.yml
+
 USER grafana
