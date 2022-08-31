@@ -4,4 +4,4 @@ global:
 scrape_configs:
   - job_name: 'irods-csi'
     static_configs:
-      - targets: ['localhost:12022']
+      - targets: ['172.17.42.1:12022']
