@@ -82,7 +82,8 @@
               }
             ]
           }
-        }
+        },
+        "overrides": []
       },
       "gridPos": {
         "h": 7,
@@ -111,11 +112,10 @@
           },
           "editorMode": "builder",
           "expr": "irodsfs_pool_grpc_clients",
-          "instant": true,
-          "key": "Q-89b3902d-f67a-4a97-8502-0cf2e95cd1b8-0",
+          "hide": false,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "B"
         }
       ],
       "title": "# of iRODS FUSE Clients",
@@ -858,7 +858,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": false,
+  "refresh": "5s",
   "schemaVersion": 37,
   "style": "dark",
   "tags": [],
