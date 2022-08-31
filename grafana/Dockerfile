@@ -16,6 +16,7 @@ COPY grafana/scripts/prep-datasource-yaml.sh /usr/local/bin/
 RUN prep-datasource-yaml.sh
 
 COPY grafana/scripts/dashboard.yml /etc/grafana/provisioning/dashboards/dashboard.yml
+COPY grafana/scripts/irods_dashboard.json /var/lib/grafana/dashboards/
 RUN chmod a+r /etc/grafana/provisioning/dashboards/dashboard.yml
 
 USER grafana
