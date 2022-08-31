@@ -4,4 +4,5 @@ datasources:
   - name: irods-csi-prometheus
     type: prometheus
     access: proxy
-    url: $PROMETHEUS_HOST:$PROMETHEUS_SERIVCE_PORT
+    url: http://$PROMETHEUS_HOST:$PROMETHEUS_SERIVCE_PORT
+    editable: true
