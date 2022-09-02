@@ -111,7 +111,7 @@
             "uid": "P20BB118F899CEFAE"
           },
           "editorMode": "builder",
-          "expr": "irodsfs_pool_grpc_clients",
+          "expr": "sum(irodsfs_pool_grpc_clients)",
           "hide": false,
           "legendFormat": "__auto",
           "range": true,
@@ -204,7 +204,7 @@
             "uid": "P20BB118F899CEFAE"
           },
           "editorMode": "builder",
-          "expr": "irodsfs_pool_occupied_connections",
+          "expr": "sum(irodsfs_pool_occupied_connections)",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -296,7 +296,7 @@
             "uid": "P20BB118F899CEFAE"
           },
           "editorMode": "builder",
-          "expr": "irodsfs_pool_open_connections",
+          "expr": "sum(irodsfs_pool_open_connections)",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -388,7 +388,7 @@
             "uid": "P20BB118F899CEFAE"
           },
           "editorMode": "builder",
-          "expr": "irodsfs_pool_open_file_handles",
+          "expr": "sum(irodsfs_pool_open_file_handles)",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -855,6 +855,98 @@
         }
       ],
       "title": "iRODS Connection Failures",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P20BB118F899CEFAE"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 12,
+        "y": 14
+      },
+      "id": 19,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P20BB118F899CEFAE"
+          },
+          "editorMode": "builder",
+          "expr": "sum(irods_csi_driver_volume_mount)",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "iRODS CSI Driver Volume Mount",
       "type": "timeseries"
     }
   ],
