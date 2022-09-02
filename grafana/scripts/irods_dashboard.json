@@ -480,13 +480,14 @@
             "uid": "P20BB118F899CEFAE"
           },
           "editorMode": "builder",
-          "expr": "sum(rate(irodsfs_pool_bytes_sent_total[$__interval])) / 1048576",
+          "expr": "sum(delta(irodsfs_pool_bytes_sent_total[5m])) / 1048576",
+          "hide": false,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "B"
         }
       ],
-      "title": "iRODS Bytes Sent (MBps)",
+      "title": "iRODS Bytes Sent (MB)",
       "type": "timeseries"
     },
     {
@@ -494,6 +495,7 @@
         "type": "prometheus",
         "uid": "P20BB118F899CEFAE"
       },
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -572,13 +574,13 @@
             "uid": "P20BB118F899CEFAE"
           },
           "editorMode": "builder",
-          "expr": "sum(rate(irodsfs_pool_bytes_received_total[$__rate_interval])) / 1048576",
+          "expr": "sum(delta(irodsfs_pool_bytes_received_total[5m])) / 1048576",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "iRODS Bytes Received (MBps)",
+      "title": "iRODS Bytes Received (MB)",
       "type": "timeseries"
     },
     {
@@ -664,7 +666,7 @@
             "uid": "P20BB118F899CEFAE"
           },
           "editorMode": "builder",
-          "expr": "sum(rate(irodsfs_pool_cache_hit_total[$__rate_interval]))",
+          "expr": "sum(delta(irodsfs_pool_cache_hit_total[5m]))",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -756,7 +758,7 @@
             "uid": "P20BB118F899CEFAE"
           },
           "editorMode": "builder",
-          "expr": "sum(rate(irodsfs_pool_request_response_failures_total[$__rate_interval]))",
+          "expr": "sum(irodsfs_pool_request_response_failures_total)",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -848,7 +850,7 @@
             "uid": "P20BB118F899CEFAE"
           },
           "editorMode": "builder",
-          "expr": "sum(rate(irodsfs_pool_connection_failures_total[$__rate_interval]))",
+          "expr": "sum(irodsfs_pool_connection_failures_total)",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"

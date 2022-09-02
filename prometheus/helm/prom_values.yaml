@@ -1,0 +1,19 @@
+server:
+  persistentVolume:
+    enabled: false
+
+alertmanager:
+  enabled: false
+
+pushgateway:
+  enabled: false
+
+extraScrapeConfigs: |
+  - job_name: 'irods-csi'
+    scrape_interval: 1m
+    static_configs:
+      - targets: ['172.17.42.1:12022']
+  - job_name: 'irodsfs-pool'
+    scrape_interval: 1m
+    static_configs:
+      - targets: ['172.17.42.1:12022']
